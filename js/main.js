@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const eligibilityElement = document.getElementById("eligibility");
     const quizContainer = document.getElementById("quiz-container");
     const countdownTimer = document.getElementById("countdown-timer");
-    const header = document.querySelector('header'); // Get the header element
+    const header = document.querySelector('header');
     
     function showQuestion() {
       if (currentQuestion < questions.length) {
@@ -30,20 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
           
           // Change the header text after eligibility is confirmed
           header.querySelector('h1').textContent = "Congratulations!";
-          header.querySelector('p').innerHTML = "Spots are extremely limited, so make a quick call today.<br>Call Now To Lock In Your Coverage Amount";
+          header.querySelector('p').innerHTML = "Spots are extremely limited, so make a quick call today.<br><br>Call Now To Lock In Your Coverage Amount";
         }, 2000);
       }
     }
     
     function startCountdown(duration) {
       let timer = duration;
-      countdownTimer.textContent = `Time Remaining: 2:00`; // Set initial timer value
+      countdownTimer.textContent = `Time Remaining: 2:00`;
     
       const interval = setInterval(() => {
         const minutes = Math.floor(timer / 60);
         const seconds = timer % 60;
         countdownTimer.textContent = `Time Remaining: ${minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
         timer--;
+
+        if (timer <= 59) {
+            countdownTimer.classList.add("warning");
+          }
     
         if (timer < 0) {
           clearInterval(interval);

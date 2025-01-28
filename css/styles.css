@@ -1,94 +1,135 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --secondary-color: #666;
+    --text-color: #333;
+    --background-color: #fff;
+    --background-gradient-start: #f0f2f5;
+    --background-gradient-end: #d6dee8;
+    --font-family: 'Arial', sans-serif;
+    --font-size-base: 1.2rem; /* Slightly larger base font size */
+    --font-size-heading: 2.5rem; /* Increased size for headings */
+    --font-size-subheading: 1.5rem; /* Increased subheading size */
+    --font-size-small: 1.4rem; /* Increased for better legibility */
+    --border-radius: 12px;
+    --btn-padding: 1rem 1.5rem; /* Increased padding for buttons */
+    --btn-font-size: 1.4rem; /* Larger button text */
+    --countdown-font-size: 1.4rem; /* Larger countdown timer text */
+    --countdown-color: #444;
+    --result-color: #007bff;
+    --eligibility-opacity: 0;
+}
+
 /* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f0f2f5, #d6dee8);
-    color: #333;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--background-gradient-start), var(--background-gradient-end));
+    color: var(--text-color);
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.1rem; /* Slightly larger font size for better readability */
-  }
-  
-  /* Container */
-  .container {
-    background: #fff;
-    border-radius: 12px;
+    line-height: 1.6; /* Better readability */
+}
+
+/* Container */
+.container {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 90%;
-    padding: 2rem;
+    padding: 2.5rem; /* Increased padding */
     text-align: center;
-  }
-  
-  /* Header Styles */
-  header h1 {
-    font-size: 2rem;
-    color: #333; /* Darker color for better contrast */
-    margin-bottom: 0.5rem;
-  }
-  
-  header p {
-    font-size: 1.2rem;
-    color: #444; /* Slightly lighter color but still with good contrast */
-    margin-bottom: 2rem;
-  }
-  
-  /* Quiz Styles */
-  #quiz-container {
-    margin-bottom: 1.5rem;
-  }
-  
-  .question {
-    font-size: 1.4rem; /* Larger text for clarity */
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  #answers {
+}
+
+/* Header Styles */
+header h1 {
+    font-size: var(--font-size-heading);
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+header p {
+    font-size: var(--font-size-subheading);
+    color: var(--secondary-color);
+    margin-bottom: 2.5rem; /* Increased space below the subheading */
+}
+
+/* Quiz Styles */
+#quiz-container {
+    margin-bottom: 2rem; /* Increased margin */
+}
+
+.question {
+    font-size: var(--font-size-small);
+    margin-bottom: 1.2rem;
+    color: var(--text-color);
+}
+
+#answers {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-  }
-  
-  .btn {
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem; /* Larger buttons for easier clicking */
+    gap: 2rem; /* Increased gap between buttons */
+}
+
+.btn {
+    padding: var(--btn-padding);
+    font-size: var(--btn-font-size);
     color: #fff;
-    background: #007bff;
+    background: var(--primary-color);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
-    min-width: 150px; /* Ensure buttons are large enough */
-  }
-  
-  .btn:hover {
-    background: #0056b3;
-  }
-  
-  .btn:focus {
-    outline: 2px solid #ffbf00; /* Add focus states for accessibility */
-  }
-  
-  .hidden {
+    min-width: 150px; /* Ensures buttons are large enough */
+    min-height: 50px; /* Ensures buttons are tall enough */
+}
+
+.btn:hover {
+    background: var(--primary-hover);
+}
+
+.hidden {
     display: none;
-  }
-  
-  #eligibility {
-    font-size: 1.4rem;
-    color: #444;
-    opacity: 0;
+}
+
+#eligibility {
+    font-size: var(--font-size-small);
+    color: var(--text-color);
+    opacity: var(--eligibility-opacity);
     animation: fadeInOut 2s ease-in-out 0s infinite;
-  }
-  
-  @keyframes fadeInOut {
+    line-height: 1.8; /* Added line height for better spacing */
+}
+
+#result {
+    font-size: var(--font-size-small);
+    color: var(--result-color);
+}
+
+#result a {
+    text-decoration: none;
+    color: var(--primary-hover);
+}
+
+#result a:hover {
+    text-decoration: underline;
+}
+
+#countdown-timer {
+    margin-top: 1.5rem;
+    font-size: var(--countdown-font-size);
+    color: var(--countdown-color);
+}
+
+/* Keyframes for eligibility */
+@keyframes fadeInOut {
     0% {
       opacity: 0;
     }
@@ -104,37 +145,28 @@
     100% {
       opacity: 0;
     }
-  }
-  
-  #result {
-    font-size: 1.4rem;
-    color: #007bff;
-  }
-  
-  #result a {
-    text-decoration: none;
-    color: #0056b3;
-  }
-  
-  #result a:hover {
-    text-decoration: underline;
-  }
-  
-  #countdown-timer {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    color: #444;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     header h1 {
-      font-size: 1.8rem;
+        font-size: 2.2rem; /* Slightly smaller for smaller screens but still legible */
     }
-  
+
+    header p {
+        font-size: 1.6rem; /* Slightly smaller for mobile */
+    }
+
     .btn {
-      padding: 0.8rem 1.2rem;
-      font-size: 1rem;
+        padding: 1.2rem 1.6rem; /* Larger buttons on mobile */
+        font-size: 1.2rem; /* Larger text in buttons */
     }
-  }
-  
+
+    #countdown-timer {
+        font-size: 1.6rem; /* Larger font on mobile */
+    }
+
+    .container {
+        padding: 2rem; /* Padding adjusted for smaller screens */
+    }
+}
