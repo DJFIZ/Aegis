@@ -19,18 +19,18 @@
       <div id="quiz-container">
         <p id="question" class="question"></p>
         <div id="answers">
-          <button class="btn" id="yes-btn">Yes</button>
-          <button class="btn" id="no-btn">No</button>
+          <button class="btn" id="yes-btn" aria-pressed="false">Yes</button>
+          <button class="btn" id="no-btn" aria-pressed="false">No</button>
         </div>
       </div>
 
       <!-- Confirming Eligibility -->
-      <p id="eligibility" class="hidden">Confirming Eligibility...</p>
+      <p id="eligibility" class="hidden" aria-live="polite">Confirming Eligibility...</p>
 
       <!-- Final Result -->
       <div id="result" class="hidden">
         <p>Call us at: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p id="countdown-timer">Time Remaining: 2:00</p>
+        <p id="countdown-timer" aria-live="polite">Time Remaining: 2:00</p>
       </div>
     </main>
   </div>
