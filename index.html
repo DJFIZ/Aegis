@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Quiz Page</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Up To $50,000 Burial Policy Can Cover 100% Of Your Funeral Costs &amp; Unpaid Debts</h1>
+      <p>See If You Qualify</p>
+    </header>
+
+    <main>
+      <!-- Quiz Container -->
+      <div id="quiz-container">
+        <p id="question" class="question"></p>
+        <div id="answers">
+          <button class="btn" id="yes-btn">Yes</button>
+          <button class="btn" id="no-btn">No</button>
+        </div>
+      </div>
+
+      <!-- Confirming Eligibility -->
+      <p id="eligibility" class="hidden">Confirming Eligibility...</p>
+
+      <!-- Final Result -->
+      <div id="result" class="hidden">
+        <p>Call us at: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        <p id="countdown-timer">Time Remaining: 2:00</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
