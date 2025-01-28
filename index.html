@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Quiz Page</title>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axe-core/4.3.5/axe.min.js"></script> <!-- axe-core for accessibility testing -->
 </head>
 <body>
   <div class="container">
@@ -17,24 +18,32 @@
     <main>
       <!-- Quiz Container -->
       <div id="quiz-container">
-        <p id="question" class="question"></p>
+        <p id="question" class="question" aria-live="polite"></p>
         <div id="answers">
-          <button class="btn" id="yes-btn" aria-pressed="false">Yes</button>
-          <button class="btn" id="no-btn" aria-pressed="false">No</button>
+          <button class="btn" id="yes-btn" aria-label="Select Yes" role="button">Yes</button>
+          <button class="btn" id="no-btn" aria-label="Select No" role="button">No</button>
         </div>
       </div>
 
       <!-- Confirming Eligibility -->
-      <p id="eligibility" class="hidden" aria-live="polite">Confirming Eligibility...</p>
+      <p id="eligibility" class="hidden" aria-live="assertive">Confirming Eligibility...</p>
 
       <!-- Final Result -->
-      <div id="result" class="hidden">
+      <div id="result" class="hidden" aria-live="assertive">
         <p>Call us at: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p id="countdown-timer" aria-live="polite">Time Remaining: 2:00</p>
+        <p id="countdown-timer">Time Remaining: 2:00</p>
       </div>
     </main>
   </div>
 
   <script src="js/main.js"></script>
+  
+  <!-- Accessibility Check -->
+  <script>
+    axe.run(function (err, results) {
+      if (err) throw err;
+      console.log(results);
+    });
+  </script>
 </body>
 </html>
